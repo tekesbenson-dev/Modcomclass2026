@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily Bite Bakery</title>
+  <link rel="stylesheet" href="dist (1)/dist/css/bootstrap.css">
+  <style>
+    body { font-family: Arial, sans-serif; background-color: #fff7ec; }
+    .section-title { margin-bottom: 2rem; }
+    .card img { height: 200px; object-fit: cover; }
+    .carousel-item img { height: 500px; object-fit: cover; }
+    .carousel-caption h5 { font-weight: bold; font-size: 2rem; }
+    .carousel-caption p { font-size: 1.2rem; }
+    .testimonial { background-color: #fdf1e6; padding: 20px; border-radius: 10px; margin-bottom: 20px; }
+    footer { color: white; }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#f4a261;">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="index.html">Daily Bite</a>
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="order.html">Order</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero / Carousel Section -->
+<section id="home">
+  <div id="homeCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="images/bread/bread1.jfif" class="d-block w-100" alt="Fresh Bread">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Fresh Bread</h5>
+          <p>Baked daily for your family</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="images/cake/cake1.jfif" class="d-block w-100" alt="Delicious Cakes">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Delicious Cakes</h5>
+          <p>Perfect for every celebration</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="images/mandazi/mandazi1.jfif" class="d-block w-100" alt="Soft Mandazi">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Soft Mandazi</h5>
+          <p>Sweet treats everyone loves</p>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#homeCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#homeCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+</section>
+
+<!-- Featured Products Section -->
+<section class="py-5">
+  <div class="container">
+    <h2 class="section-title text-center">Featured Products</h2>
+    <div class="row text-center">
+      <div class="col-md-3 mb-4">
+        <div class="card shadow">
+          <img src="images/bread/bread2.jfif" class="card-img-top" alt="Bread">
+          <div class="card-body">
+            <h5>Bread</h5>
+            <p>KSh 80 per loaf</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 mb-4">
+        <div class="card shadow">
+          <img src="images/cake/cake2.jfif" class="card-img-top" alt="Cake">
+          <div class="card-body">
+            <h5>Cake</h5>
+            <p>From KSh 1,200</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 mb-4">
+        <div class="card shadow">
+          <img src="images/mandazi/mandazi3.jfif" class="card-img-top" alt="Mandazi">
+          <div class="card-body">
+            <h5>Mandazi</h5>
+            <p>KSh 20 each</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 mb-4">
+        <div class="card shadow">
+          <img src="images/biscuits/biscuit1.jfif" class="card-img-top" alt="Biscuits">
+          <div class="card-body">
+            <h5>Biscuits</h5>
+            <p>KSh 150</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Why Choose Us Section -->
+<section class="py-5 bg-light">
+  <div class="container">
+    <h2 class="section-title text-center">Why Choose Daily Bite?</h2>
+    <div class="row text-center">
+      <div class="col-md-4 mb-4">
+        <h5>Quality Ingredients</h5>
+        <p>We use only fresh and high-quality ingredients in every product.</p>
+      </div>
+      <div class="col-md-4 mb-4">
+        <h5>Freshly Baked</h5>
+        <p>Everything is baked daily to ensure the best taste and aroma.</p>
+      </div>
+      <div class="col-md-4 mb-4">
+        <h5>Fast Delivery</h5>
+        <p>Get your favorite baked goods delivered straight to your door.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials Section -->
+<section class="py-5">
+  <div class="container">
+    <h2 class="section-title text-center">What Our Customers Say</h2>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="testimonial">
+          <p>"Best bakery in town! The bread is always fresh and tasty." <br><strong>- Alice K.</strong></p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="testimonial">
+          <p>"I ordered a cake for my birthday and it was perfect. Highly recommend!" <br><strong>- James M.</strong></p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="testimonial">
+          <p>"Mandazi and biscuits are always my favorite. Excellent quality!" <br><strong>- Sarah T.</strong></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer style="background-color:#264653; padding:40px 0;">
+  <div class="container">
+    <div class="row">
+      
+      <!-- About Us -->
+      <div class="col-md-4 mb-4" style="color:white;">
+        <h5>About Us</h5>
+        <p>Daily Bite Bakery has been serving fresh, delicious baked goods since 2018. We specialize in bread, cakes, pastries, and traditional East African treats like Mandazi. Our mission is to bring joy to every bite!</p>
+        <p>We value quality, freshness, and community, making sure every product is baked with love and care.</p>
+      </div>
+      
+      <!-- Contact Us -->
+      <div class="col-md-4 mb-4" style="color:white;">
+        <h5>Contact Us</h5>
+        <form>
+          <div class="mb-2">
+            <input type="email" class="form-control" placeholder="Enter your email" required>
+          </div>
+          <div class="mb-2">
+            <textarea class="form-control" rows="3" placeholder="Leave a comment" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-warning w-100">Send Message</button>
+        </form>
+        <p class="mt-2">Phone: +254 712 345 678<br>Email: info@dailybite.com</p>
+      </div>
+      
+      <!-- Stay Connected -->
+      <div class="col-md-4 mb-4" style="color:white;">
+        <h5>Stay Connected</h5>
+        <div class="mb-2">
+          <a href="#" target="_blank"><img src="images/f.jfif" alt="Facebook" style="height:40px; margin-right:10px;"></a>
+          <a href="#" target="_blank"><img src="images/ig.jfif" alt="Instagram" style="height:40px; margin-right:10px;"></a>
+          <a href="#" target="_blank"><img src="images/x.png" alt="X" style="height:40px;"></a>
+        </div>
+        <p>Follow us on social media for updates on new products, special offers, and behind-the-scenes baking tips!</p>
+      </div>
+
+    </div>
+
+    <div class="text-center mt-3" style="border-top:1px solid #fff; padding-top:10px; color:white;">
+      Developed by Benson. &copy; 2026. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+ <script src="dist (1)/dist/js/bootstrap.js"></script>
+</body>
+</html>

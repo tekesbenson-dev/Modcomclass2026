@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily Bite - Order Page</title>
+
+  <!-- BOOTSTRAP -->
+  <link rel="stylesheet" href="dist (1)/dist/css/bootstrap.css">
+  <script src="dist (1)/dist/js/bootstrap.js"></script>
+
+  <style>
+    body { background-color: #fff8f0; transition: 0.3s; }
+
+    .product-card:hover { transform: scale(1.05); transition: 0.3s; }
+
+    .step-content { display: none; }
+    .step-content.active { display: block; }
+
+    .order-confirm {
+      text-align: center;
+      padding: 30px;
+      background: #d4edda;
+      border-radius: 10px;
+    }
+
+    .category-btn { margin-bottom: 10px; }
+
+    .payment-section { background:#fff3cd; padding:20px; border-radius:10px; }
+
+    /* DARK MODE */
+    body.dark-mode { background-color: #121212; color: #f8f9fa; }
+    body.dark-mode .navbar,
+    body.dark-mode .card,
+    body.dark-mode .modal-content,
+    body.dark-mode .payment-section,
+    body.dark-mode .order-confirm { background-color: #1e1e1e; color: #f8f9fa; }
+    body.dark-mode .form-control,
+    body.dark-mode .form-select { background-color: #333; color: #fff; border-color: #555; }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-light bg-warning sticky-top px-4">
+  <a class="navbar-brand fw-bold" href="index.html">🍞 Daily Bite</a>
+  <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div id="nav" class="collapse navbar-collapse">
+    <ul class="navbar-nav ms-auto align-items-center">
+      <li class="nav-item"><a class="nav-link" href="index.html">🏠 Home</a></li>
+      <li class="nav-item"><a class="nav-link" href="#products">🛒 Order</a></li>
+      <li class="nav-item"><a class="nav-link" href="about.html">ℹ️ About</a></li>
+      <li class="nav-item"><a class="nav-link" href="contact.html">📞 Contact</a></li>
+      <li class="nav-item ms-3">
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="darkModeToggle">
+          <label class="form-check-label">Dark</label>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- PRODUCTS -->
+<section id="products" class="container my-5">
+  <h2 class="text-center fw-bold mb-4">Our Products</h2>
+
+  
+
+  <div id="product-list" class="row g-3">
+
+    <!-- BREAD -->
+    <div class="col-md-3 col-sm-6">
+      <div class="card product-card h-100">
+        <img src="images/bread/bread3.jfif" class="card-img-top">
+        <div class="card-body text-center d-flex flex-column">
+          <h5 class="card-title">Bread</h5>
+          <p class="fw-semibold">KSh 50 per piece</p>
+          <select class="form-select mb-2">
+            <option>White</option>
+            <option>Wholegrain</option>
+          </select>
+          <input type="number" class="form-control mb-2" placeholder="Quantity">
+          <button class="btn btn-warning mt-auto">Add</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- CAKES -->
+    <div class="col-md-3 col-sm-6">
+      <div class="card product-card h-100">
+        <img src="images/cake/cake3.jfif" class="card-img-top">
+        <div class="card-body text-center d-flex flex-column">
+          <h5 class="card-title">Cake</h5>
+          <p class="fw-semibold">KSh 1000 per Kg</p>
+          <select class="form-select mb-2">
+            <option>Birthday</option>
+            <option>Wedding</option>
+          </select>
+          <input type="number" class="form-control mb-2" placeholder="Kg">
+          <button class="btn btn-warning mt-auto">Add</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- MANDAZI -->
+    <div class="col-md-3 col-sm-6">
+      <div class="card product-card h-100">
+        <img src="images/mandazi/mandazi4.jfif" class="card-img-top">
+        <div class="card-body text-center d-flex flex-column">
+          <h5 class="card-title">Mandazi</h5>
+          <p class="fw-semibold">KSh 20 per packet</p>
+          <input type="number" class="form-control mb-2" placeholder="Packets">
+          <button class="btn btn-warning mt-auto">Add</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- BISCUITS -->
+    <div class="col-md-3 col-sm-6">
+      <div class="card product-card h-100">
+        <img src="images/biscuits/biscuit3.jfif" class="card-img-top">
+        <div class="card-body text-center d-flex flex-column">
+          <h5 class="card-title">Biscuits</h5>
+          <p class="fw-semibold">KSh 150 per pack</p>
+          <select class="form-select mb-2">
+            <option>Packet</option>
+            <option>Box</option>
+          </select>
+          <input type="number" class="form-control mb-2" placeholder="Quantity">
+          <button class="btn btn-warning mt-auto">Add</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CHECKOUT -->
+<section class="container my-5">
+  <h2 class="text-center fw-bold mb-4">Checkout</h2>
+
+  <div class="payment-section">
+
+    <!-- STEP 1: CART REVIEW -->
+    <div class="step-content active" id="step-cart">
+      <h4 class="mb-3">🛒 Your Cart</h4>
+      <div id="cart-items" class="mb-3">
+        <p>No items added yet.</p>
+      </div>
+      <p class="fw-bold" id="cart-total"></p>
+      <button class="btn btn-warning" id="to-payment">Proceed to Payment</button>
+    </div>
+
+    <!-- STEP 2: PAYMENT METHOD -->
+    <div class="step-content" id="step-payment">
+      <h4 class="mb-3">💳 Payment</h4>
+      <label class="form-label">Choose Payment Method:</label>
+      <select class="form-select mb-3" id="payment-method">
+        <option value="M-Pesa">M-Pesa</option>
+        <option value="Cash on Delivery">Cash on Delivery</option>
+        <option value="Credit/Debit Card">Credit/Debit Card</option>
+        <option value="PayPal">PayPal</option>
+      </select>
+      <div class="d-flex justify-content-between">
+        <button class="btn btn-secondary" id="back-to-cart">Back</button>
+        <button class="btn btn-success" id="confirm-payment">Confirm Payment</button>
+      </div>
+    </div>
+
+    <!-- STEP 3: CONFIRMATION -->
+    <div class="step-content" id="step-confirm">
+      <h4>✅ Payment Confirmed</h4>
+      <p id="confirmation-msg"></p>
+      <button class="btn btn-warning" id="new-order">Place New Order</button>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  // DARK MODE
+  const darkToggle = document.getElementById('darkModeToggle');
+  if (localStorage.getItem('dark') === 'on') {
+    document.body.classList.add('dark-mode');
+    darkToggle.checked = true;
+  }
+  darkToggle.addEventListener('change', () => {
+    document.body.classList.toggle('dark-mode');
+    localStorage.setItem('dark', darkToggle.checked ? 'on' : 'off');
+  });
+
+  // STEP HANDLING
+  const steps = {
+    cart: document.getElementById('step-cart'),
+    payment: document.getElementById('step-payment'),
+    confirm: document.getElementById('step-confirm')
+  };
+  function showStep(step) {
+    Object.values(steps).forEach(s => s.classList.remove('active'));
+    steps[step].classList.add('active');
+  }
+
+  // CART LOGIC
+  const cartItemsContainer = document.getElementById('cart-items');
+  const cartTotal = document.getElementById('cart-total');
+  let cart = [];
+
+  const addButtons = document.querySelectorAll('.product-card .btn-warning');
+  addButtons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const card = btn.closest('.product-card');
+      const title = card.querySelector('.card-title').innerText;
+      const priceText = card.querySelector('.fw-semibold').innerText;
+      const price = parseFloat(priceText.match(/\d+/)[0]);
+      let qty = parseFloat(card.querySelector('input[type=number]').value);
+      if (!qty || qty <= 0) qty = 1;
+
+      const existing = cart.find(item => item.title === title);
+      if (existing) existing.qty += qty;
+      else cart.push({ title, price, qty });
+      updateCartDisplay();
+    });
+  });
+
+  function updateCartDisplay() {
+    if (cart.length === 0) {
+      cartItemsContainer.innerHTML = '<p>No items added yet.</p>';
+      cartTotal.innerText = '';
+      return;
+    }
+    cartItemsContainer.innerHTML = '';
+    let total = 0;
+    cart.forEach(item => {
+      total += item.price * item.qty;
+      cartItemsContainer.innerHTML += `<p>${item.title} - KSh ${item.price} x ${item.qty} = KSh ${item.price * item.qty}</p>`;
+    });
+    cartTotal.innerText = `Total: KSh ${total}`;
+  }
+
+  // NAVIGATION & PAYMENT
+  document.getElementById('to-payment').addEventListener('click', () => {
+    if (cart.length === 0) { alert('Your cart is empty!'); return; }
+    showStep('payment');
+  });
+
+  document.getElementById('back-to-cart').addEventListener('click', () => showStep('cart'));
+
+  document.getElementById('confirm-payment').addEventListener('click', () => {
+    const method = document.getElementById('payment-method').value;
+    const totalAmount = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
+
+    let extraInfo = '';
+    if(method === "M-Pesa") extraInfo = "Use your M-Pesa account to complete the payment.";
+    if(method === "Credit/Debit Card") extraInfo = "Enter card details at the prompt (simulated).";
+    if(method === "PayPal") extraInfo = "You will be redirected to PayPal (simulated).";
+
+    document.getElementById('confirmation-msg').innerHTML = `
+      Your payment of <strong>KSh ${totalAmount}</strong> via <strong>${method}</strong> has been received.<br>
+      ${extraInfo}<br>
+      Thank you for choosing <strong>Daily Bite</strong> 💛
+    `;
+
+    cart = [];
+    updateCartDisplay();
+    showStep('confirm');
+  });
+
+  document.getElementById('new-order').addEventListener('click', () => showStep('cart'));
+</script>
+
+</body>
+</html>

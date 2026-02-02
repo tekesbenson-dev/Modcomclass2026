@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Daily Bite</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="dist (1)/dist/css/bootstrap.css">
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- NAVBAR (STICKY + ICONS + DARK MODE TOGGLE) -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="index.html">Daily Bite</a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">
+            <i class="bi bi-house-door"></i> Home
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="about.html">
+            <i class="bi bi-info-circle"></i> About
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="order.html">
+            <i class="bi bi-cart"></i> Order
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link active fw-semibold" aria-current="page" href="contact.html">
+            <i class="bi bi-envelope"></i> Contact
+          </a>
+        </li>
+
+        <!-- Dark Mode Toggle -->
+        <li class="nav-item">
+          <button class="btn btn-outline-light btn-sm ms-lg-3" id="themeToggle">
+            <i class="bi bi-moon-stars"></i>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- SPACER FOR FIXED NAVBAR -->
+<div style="height: 70px;"></div>
+
+<!-- HEADER -->
+<div class="py-5 text-center text-white"
+     style="background: linear-gradient(90deg, #ff7a18, #ffb347);">
+  <h1 class="display-4 fw-bold">Contact Us</h1>
+  <p class="lead">We’d love to hear from you 💛</p>
+</div>
+
+<!-- CONTACT INFO -->
+<div class="container py-5">
+  <div class="row g-4 text-center">
+    <div class="col-md-4">
+      <div class="card bg-primary text-white h-100 shadow">
+        <div class="card-body">
+          <h5><i class="bi bi-telephone"></i> Phone</h5>
+          <p>+254 700 000 000</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card bg-success text-white h-100 shadow">
+        <div class="card-body">
+          <h5><i class="bi bi-envelope"></i> Email</h5>
+          <p>info@dailybite.com</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card bg-warning h-100 shadow">
+        <div class="card-body">
+          <h5><i class="bi bi-geo-alt"></i> Location</h5>
+          <p>Nairobi, Kenya</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT FORM -->
+<div class="bg-body-tertiary py-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+
+        <h2 class="text-center mb-4">Send Us a Message</h2>
+
+        <div class="alert alert-success d-none" id="successAlert">
+          Message sent successfully 🎉
+        </div>
+
+        <form id="contactForm">
+          <div class="mb-3">
+            <input type="text" class="form-control rounded-3" placeholder="Your Name" required>
+          </div>
+
+          <div class="mb-3">
+            <input type="email" class="form-control rounded-3" placeholder="Your Email" required>
+          </div>
+
+          <div class="mb-3">
+            <input type="text" class="form-control rounded-3" placeholder="Subject" required>
+          </div>
+
+          <div class="mb-3">
+            <textarea class="form-control rounded-3" rows="5" placeholder="Your Message" required></textarea>
+          </div>
+
+          <div class="text-center">
+            <button class="btn btn-success px-5 rounded-3">Send Message</button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MAP -->
+<div class="container mb-5">
+  <div class="ratio ratio-16x9 rounded shadow">
+    <iframe
+      src="https://www.google.com/maps?q=Nairobi,Kenya&output=embed"
+      loading="lazy">
+    </iframe>
+  </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- FORM + DARK MODE SCRIPT -->
+<script>
+  // Form alert
+  const form = document.getElementById("contactForm");
+  const alertBox = document.getElementById("successAlert");
+
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+    alertBox.classList.remove("d-none");
+    form.reset();
+    setTimeout(() => alertBox.classList.add("d-none"), 3000);
+  });
+
+  // Dark mode toggle
+  const toggle = document.getElementById("themeToggle");
+  const html = document.documentElement;
+
+  toggle.addEventListener("click", () => {
+    const theme = html.getAttribute("data-bs-theme");
+    html.setAttribute("data-bs-theme", theme === "dark" ? "light" : "dark");
+  });
+</script>
+
+</body>
+</html>
